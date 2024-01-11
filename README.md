@@ -4,8 +4,8 @@ blackboks Infra repository
 ## Знакомство с облачной инфраструктурой Yandex.Cloud
 
 ### Виртуальные машины:
-- bastion_IP = 84.201.128.49
-- someinternalhost_IP = 10.128.0.4
+bastion_IP = 84.201.128.49
+someinternalhost_IP = 10.128.0.4
 
 
 ### Подключение к someinternalhost в одну команду:
