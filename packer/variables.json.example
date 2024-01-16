@@ -3,6 +3,7 @@
   "folder_id": "1",
   "source_image_family": "ubuntu",
   "image_family": "base",
+  "image_name": "base-{{timestamp}}",
   "use_ipv4_nat": "true",
   "instance_cores": "1",
   "instance_core_fraction": "1",
