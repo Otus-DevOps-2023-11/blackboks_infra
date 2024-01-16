@@ -6,7 +6,7 @@
   "image_name": "base-{{timestamp}}",
   "use_ipv4_nat": "true",
   "instance_cores": "1",
-  "instance_core_fraction": "1",
+  "instance_core_fraction": "50",
   "instance_mem_gb": "1",
   "disk_size_gb": "5",
   "instance_name": "test",

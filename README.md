@@ -59,6 +59,9 @@ testapp_port = 9292
 
 ### Было сделано:
 
+* Установлен Packer
+* Создан сервисный аккаунт в YC
+* Создан файл ключа для сервисного аккаунта
 * Создан шаблон Packer
 * Установлен билдер yandex - packer plugins install github.com/hashicorp/yandex
 * В шаблон добавлены провизионеры shell и file
