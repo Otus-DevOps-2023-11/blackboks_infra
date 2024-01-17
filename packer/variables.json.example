@@ -1,13 +1,13 @@
 {
   "service_account_key_file": "key.json",
-  "folder_id": "1",
-  "source_image_family": "ubuntu",
-  "image_family": "base",
-  "image_name": "base-{{timestamp}}",
+  "folder_id": "b1gkdafp07horpeotfcf",
+  "source_image_family": "ubuntu-1604-lts",
+  "image_family": "reddit-base",
+  "image_name": "reddit-base-{{timestamp}}",
   "use_ipv4_nat": "true",
-  "instance_cores": "1",
-  "instance_mem_gb": "1",
-  "disk_size_gb": "5",
+  "instance_cores": "2",
+  "instance_mem_gb": "2",
+  "disk_size_gb": "10",
   "instance_name": "test",
-  "zone": "zone"
+  "zone": "ru-central1-a"
 }
