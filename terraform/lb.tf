@@ -21,7 +21,7 @@ resource "yandex_lb_target_group" "lb-group" {
 #     }
 #   }
 
-# }
+ }
 
 
 resource "yandex_lb_network_load_balancer" "balancer" {
