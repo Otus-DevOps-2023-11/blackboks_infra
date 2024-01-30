@@ -1,0 +1,13 @@
+{
+  "service_account_key_file": "key.json",
+  "folder_id": "b1gkdafp07horpeotfcf",
+  "source_image_family": "ubuntu-1604-lts",
+  "image_family": "reddit-base",
+  "image_name": "reddit-base-{{timestamp}}",
+  "use_ipv4_nat": "true",
+  "instance_cores": "2",
+  "instance_mem_gb": "2",
+  "disk_size_gb": "10",
+  "instance_name": "test",
+  "zone": "ru-central1-a"
+}
