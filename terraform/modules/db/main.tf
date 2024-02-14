@@ -4,7 +4,7 @@ terraform {
       source = "yandex-cloud/yandex"
     }
   }
-  required_version = ">= 0.13"
+  required_version = "0.12"
 }
 resource "yandex_compute_instance" "db" {
   name = var.db_name
