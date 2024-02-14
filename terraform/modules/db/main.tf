@@ -2,12 +2,10 @@ terraform {
   required_providers {
     yandex = {
       source = "yandex-cloud/yandex"
-      required_version = ">= 0.13"
     }
   }
+  required_version = ">= 0.13"
 }
-
-
 resource "yandex_compute_instance" "db" {
   name = var.db_name
   labels = {
