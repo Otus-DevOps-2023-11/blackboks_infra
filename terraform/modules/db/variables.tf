@@ -4,9 +4,9 @@ variable "public_key_path" {
 variable "subnet_id" {
   description = "Subnet"
 }
-variable db_disk_image {
-description = "Disk image for reddit db"
-default = "fd8rl2902l5hl5pdhojn"
+variable "db_disk_image" {
+  description = "Disk image for reddit db"
+  default     = "fd8rl2902l5hl5pdhojn"
 }
 variable "db_name" {
   description = "Database instance name"
