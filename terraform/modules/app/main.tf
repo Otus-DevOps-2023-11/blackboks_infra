@@ -10,7 +10,7 @@ terraform {
 
 resource "yandex_compute_instance" "app" {
   name = var.app_name
-    labels = {
+  labels = {
     tags = "reddit-app"
   }
 
@@ -27,11 +27,11 @@ resource "yandex_compute_instance" "app" {
 
   network_interface {
     subnet_id = var.subnet_id
-    nat = true
+    nat       = true
   }
 
   metadata = {
-  ssh-keys = "ubuntu:${file(var.public_key_path)}"
+    ssh-keys = "ubuntu:${file(var.public_key_path)}"
   }
 
   connection {
