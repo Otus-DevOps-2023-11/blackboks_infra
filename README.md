@@ -104,5 +104,5 @@ testapp_port = 9292
 * Задание со :star: - Созданы access и secret ключи для сервисного аккаунта terraform https://cloud.yandex.ru/ru/docs/iam/operations/sa/create-access-key
 * Задание со :star: - С помощью полученных ранее ключей создан s3 бакет tf-state-files
 * Задание со :star: - Для каждой из сред созданы и проинициализированиы backend.tf файлы
-* Задание со :star: - tfstate файлы хранятся в бакете в соответствующем каталоге ![alt text](image.png)
+* Задание со :star: - tfstate файлы хранятся в бакете в соответствующем каталоге при одновременном запуске двух конфигураций блокировки не происходило, т.к использование s3 этого не подразумевает (вариант с DynamoDB https://ru.hexlet.io/courses/terraform-basics/lessons/remote-state/theory_unit)
 * Задание с :star: :star: - В main.tf файлы модулей добавлены провижионеры, в каталоги с модулями перенесены скрипты
