@@ -1,0 +1,5 @@
+packages_app:
+  - git
+  - ruby-full
+  - ruby-bundler
+  - build-essential

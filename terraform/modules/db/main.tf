@@ -11,11 +11,13 @@ resource "yandex_compute_instance" "db" {
   name = var.db_name
   labels = {
     tags = "reddit-db"
+  allow_stopping_for_update = true
   }
 
   resources {
     cores  = 2
     memory = 2
+    core_fraction = 5
   }
 
   boot_disk {

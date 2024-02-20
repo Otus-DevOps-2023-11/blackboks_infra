@@ -11,11 +11,13 @@ resource "yandex_compute_instance" "app" {
   name = var.app_name
   labels = {
     tags = "reddit-app"
+  allow_stopping_for_update = true
   }
 
   resources {
     cores  = 2
     memory = 2
+    core_fraction = 5
   }
 
   boot_disk {
@@ -42,12 +44,12 @@ resource "yandex_compute_instance" "app" {
     private_key = file(var.private_key_path)
   }
 
-  provisioner "file" {
-    source      = "${path.module}/files/puma.service"
-    destination = "/tmp/puma.service"
-  }
+  # provisioner "file" {
+  #   source      = "${path.module}/files/puma.service"
+  #   destination = "/tmp/puma.service"
+  # }
 
-  provisioner "remote-exec" {
-    script = "${path.module}/files/deploy.sh"
-  }
+  # provisioner "remote-exec" {
+  #   script = "${path.module}/files/deploy.sh"
+  # }
 }
