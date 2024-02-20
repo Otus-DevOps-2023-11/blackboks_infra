@@ -6,6 +6,7 @@
 #     }
 #   }
 # }
+
 resource "yandex_compute_instance" "app" {
   name = var.app_name
   labels = {

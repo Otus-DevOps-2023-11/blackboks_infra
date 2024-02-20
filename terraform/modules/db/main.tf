@@ -6,6 +6,7 @@
 #     }
 #   }
 # }
+
 resource "yandex_compute_instance" "db" {
   name = var.db_name
   labels = {
