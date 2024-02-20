@@ -45,7 +45,7 @@ variable "db_disk_image" {
   default     = "fd8rl2902l5hl5pdhojn"
 }
 variable "app_name" {
-  description = "Application name"
+  description = "Application instance name"
 }
 variable "db_name" {
   description = "Database instance name"
