@@ -53,7 +53,6 @@ testapp_port = 9292
 Выполнено за счет дополнительного флага --metadata-from-fileuser-data=cloud-init.yaml для команды yc compute instance create
 
 
-
 ## ДЗ 5 - Сборка образов VM  при помощи Packer
 
 
@@ -108,6 +107,7 @@ testapp_port = 9292
 * Задание с :star: :star: - В main.tf файлы модулей добавлены провижионеры, в каталоги с модулями перенесены скрипты
 
 
+
 ## ДЗ 8 - Управление конфигурацией, знакомство с Ansible
 
 
@@ -134,3 +134,4 @@ testapp_port = 9292
 * Установлен плагин ansible для packer - packer plugins install github.com/hashicorp/ansible
 * В файлах packer имеющиеся провижионеры заменены на ansible
 * Созданые новые образы с помощью ansible провижионера, протестирована работа приложения
+
