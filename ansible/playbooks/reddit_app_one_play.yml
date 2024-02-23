@@ -1,0 +1,83 @@
+---
+- name: Configure hosts & deploy application
+  hosts: all
+  vars:
+    mongo_bind_ip: 0.0.0.0
+    db_host: 10.128.0.17
+  tasks:
+    - name: Change mongo config file
+      become: true # <-- Выполнить задание от root
+      template:
+        src: templates/mongod.conf.j2 # <-- Путь до локального файла-шаблона
+        dest: /etc/mongodb.conf # <-- Путь на удаленном хосте
+        mode: 0644 # <-- Права на файл, которые нужно установить
+      tags: db-tag
+      notify: restart mongod
+
+    - name: Install git
+      become: true
+      apt:
+        name: git
+        state: present
+      tags:
+        - deploy-tag
+        - git
+
+    - name: Add unit file for Puma
+      become: true
+      copy:
+        src: files/puma.service
+        dest: /etc/systemd/system/puma.service
+      tags:
+        - app-tag
+        - puma
+
+    - name: Enable Puma
+      become: true
+      systemd: name=puma enabled=yes
+      tags:
+        - app-tag
+        - puma
+
+    - name: Start Puma
+      become: true
+      systemd:
+        name: puma
+        state: started
+      tags:
+        - app-tag
+        - puma
+
+    - name: Fetch the latest version of application code
+      git:
+        repo: 'https://github.com/express42/reddit.git'
+        dest: /home/ubuntu/reddit
+        version: monolith # <-- Указываем нужную ветку
+        clone: yes
+      tags:
+        - deploy-tag
+        - pullrepo
+      notify: reload puma
+
+    - name: Bundle install
+      bundler:
+        state: present
+        chdir: /home/ubuntu/reddit # <-- В какой директории выполнить команду
+      tags:
+        - deploy-tag
+        - bundler
+
+    - name: Add config for DB connection
+      template:
+        src: templates/db_config.j2
+        dest: /home/ubuntu/db_config
+      tags: app-tag
+
+  handlers:
+    - name: restart mongod
+      become: true
+      service: name=mongodb state=restarted
+
+    - name: reload puma
+      become: true
+      systemd: name=puma state=restarted
