@@ -1,1 +1,5 @@
-ansible>=2.4
+ansible==3.0.0
+molecule==3.0.0
+testinfra==1.10
+python-vagrant==0.5.15
+#pytest-testinfra==6.8.0

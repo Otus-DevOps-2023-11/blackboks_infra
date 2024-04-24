@@ -1,0 +1,21 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  env: ENV['VAGRANT_SERVER_URL'] = 'https://vagrant.elab.pro'
+provider:
+  name: virtualbox
+  env: ENV['VAGRANT_SERVER_URL'] = 'https://vagrant.elab.pro'
+lint: yamllint
+
+platforms:
+  - name: instance
+    box: ubuntu/xenial64
+provisioner:
+  name: ansible
+  lint:
+    name: ansible-lint
+
+verifier:
+  name: testinfra
