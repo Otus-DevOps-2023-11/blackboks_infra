@@ -182,4 +182,4 @@ testapp_port = 9292
 ![Снимок экрана от 2024-04-25 02-24-48](https://github.com/Otus-DevOps-2023-11/blackboks_infra/assets/28865449/2c0889fe-c1d9-4f29-a39f-78d879e7ff7b)Те
 
 * Тесты успешно пройдены
-![Снимок экрана от 2024-04-25 02-08-59](https://github.com/Otus-DevOps-2023-11/blackboks_infra/assets/28865449/b778cf1e-32f6-44b4-a6d0-46f7f88cf38d)
+![image](https://github.com/Otus-DevOps-2023-11/blackboks_infra/assets/28865449/08c0891b-5e02-40b2-8ceb-cd875b67d88d)
