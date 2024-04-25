@@ -10,9 +10,6 @@ ENV['VAGRANT_SERVER_URL'] = 'https://vagrant.elab.pro'
     db.vm.hostname = "dbserver"
     db.vm.network :private_network, ip: "10.10.10.10"
 
-
-
-
     db.vm.provision "ansible" do |ansible|
       ansible.playbook = "playbooks/site.yml"
       ansible.groups = {
@@ -21,6 +18,8 @@ ENV['VAGRANT_SERVER_URL'] = 'https://vagrant.elab.pro'
       }
     end
   end
+
+
 
   config.vm.define "appserver" do |app|
     app.vm.box = "ubuntu/xenial64"
@@ -35,6 +34,7 @@ ENV['VAGRANT_SERVER_URL'] = 'https://vagrant.elab.pro'
       "app" => ["appserver"],
       "app:vars" => { "db_host" => "10.10.10.10"}
       }
+
 
 
       ansible.extra_vars = {
