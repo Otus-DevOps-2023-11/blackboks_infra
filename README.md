@@ -157,3 +157,29 @@ testapp_port = 9292
 * Создан vault.key, в ansible.cfg указан путь к этому файлу, в каталогах окружений созданы файлы credentials.yml, содержащие данные о пользователях, добавлен плейбук users.yml
 * Файлы credentials.yml зашифрованы с помощью команды ansible-vault encrypt
 * Проверена работа ролей с использованием зашифрованных файлов переменных окружения
+
+
+## ДЗ 11 - Разработка и тестирование Ansible ролей и плейбуков
+
+### Было сделано:
+* Установлены Vagrant, Ansible, Virtualbox
+* Создан Vagrantfile
+* Протестировано создание ВМ в Virtualbox с помощью Vagrant 
+* В Vagrantfile добавлен провизионер Ansible, протестирован провижининг vagrant provision dbserver 
+* Изменена роль db, добавлены дополнительные таски install_mongo.yml и config_mongo.yml
+* Аналогично доработана роль app, добавлены таски ruby.yml, puma.yml
+* Добавлена переменная с именем пользователя для деплоя приложения, создан шаблон puma.service.j2
+* Переопеределены экстра переменные deploy_user и nginx_config в Vagrantfile
+* Задание со :star: - в Vagrantfile проброшены порты 9292:9292 для открытия приложения напрямую и 80:80 для открытия через nginx
+![image](https://github.com/Otus-DevOps-2023-11/blackboks_infra/assets/28865449/53aefac1-1fc3-421e-a7c9-a04f31447831)
+ 
+* Установлены модули для тестирования из requiremetns.txt
+* Создан дефолтный сценарий molecule, добавлены тесты, изменен плейбук converge.yml
+* С помощью molecule создана тестовая ВМ instance
+![image](https://github.com/Otus-DevOps-2023-11/blackboks_infra/assets/28865449/b2889045-0935-4b0f-aec7-3e30cf3fcfea)
+
+* Добавлен тест порта MongoDB
+![Снимок экрана от 2024-04-25 02-24-48](https://github.com/Otus-DevOps-2023-11/blackboks_infra/assets/28865449/2c0889fe-c1d9-4f29-a39f-78d879e7ff7b)Те
+
+* Тесты успешно пройдены
+![image](https://github.com/Otus-DevOps-2023-11/blackboks_infra/assets/28865449/08c0891b-5e02-40b2-8ceb-cd875b67d88d)

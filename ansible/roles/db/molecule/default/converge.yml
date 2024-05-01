@@ -1,0 +1,16 @@
+#---
+#- name: Converge
+#  hosts: all
+#  tasks:
+#    - name: "Include db"
+#      include_role:
+#        name: "db"
+
+---
+ - name: Converge
+   become: true
+   hosts: all
+   vars:
+     mongo_bind_ip: 0.0.0.0
+   roles:
+     - role: db
