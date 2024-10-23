@@ -23,8 +23,4 @@ module "db" {
   private_key_path = var.private_key_path
 }
 
-# resource "yandex_storage_bucket" "stage" {
-#   access_key = "YCAJEAmejDzga2rhROakPI6z3"
-#   secret_key = "YCOa587ndli2mNbRASed6MkwTeKn2r3K6NRS5Tmk"
-#   bucket     = "state-stage"
-# }
+
